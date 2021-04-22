@@ -33,3 +33,30 @@ TextStyle kButtonTextStyle = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.bold,
     color: kButtonTextColor);
+
+TextStyle kAppBarTitleTextStyle = TextStyle(
+    fontFamily: 'Gotham',
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: kButtonTextColor);
+
+TextStyle kNotificationTextStyle = TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 12,
+    letterSpacing: 0.5,
+    fontWeight: FontWeight.w600,
+    color: kButtonTextColor);
+
+TextStyle kPropertyTitleTextStyle = TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 18,
+    letterSpacing: 0.3,
+    fontWeight: FontWeight.w400,
+    color: kTextColor);
+
+TextStyle kPropertyAddressTextStyle = TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 14,
+    letterSpacing: 0.5,
+    fontWeight: FontWeight.w400,
+    color: kInactiveTextColor);

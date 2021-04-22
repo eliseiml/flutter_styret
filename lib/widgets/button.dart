@@ -4,6 +4,7 @@ import 'package:flutter_styret_app/utilites/textStyles.dart';
 
 Widget button({BuildContext context, String title, void onTap()}) {
   return GestureDetector(
+    onTap: onTap,
     child: Container(
       height: 50,
       margin: EdgeInsets.symmetric(horizontal: 80),
