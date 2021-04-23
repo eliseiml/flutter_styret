@@ -6,6 +6,8 @@ import 'package:flutter_styret_app/utilites/colors.dart';
 import 'package:flutter_styret_app/utilites/strings.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
 
+import 'loginPage.dart';
+
 class PropertiesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,21 @@ class PropertiesPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: kAccentColor,
         title: Text(kListOfProperties, style: kAppBarTitleTextStyle),
-        actions: [Icon(Icons.more_vert), Container(width: 15)],
+        actions: [
+          IconButton(
+              icon: Icon(Icons.logout),
+              onPressed: () async {
+                await authModel.logout();
+                while (Navigator.canPop(context)) {
+                  Navigator.pop(context);
+                }
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return LoginPage();
+                }));
+              }),
+          Container(width: 5)
+        ],
       ),
       body: FutureBuilder(
         future: authModel.fetchProperties(),

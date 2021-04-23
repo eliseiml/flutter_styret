@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_styret_app/domain/property.dart';
 import 'package:flutter_styret_app/domain/user.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -10,6 +11,7 @@ String uri = 'secure.styret.com';
 class AuthModel extends Model {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  FlutterSecureStorage secureStorage = FlutterSecureStorage();
   String email = '';
   String password = '';
   bool inputMatches = true;
@@ -43,6 +45,11 @@ class AuthModel extends Model {
     update();
   }
 
+  Future<void> logout() async {
+    user = null;
+    await secureStorage.deleteAll();
+  }
+
   Future<http.Response> authRequest() async {
     print('authRequest');
     return http.post(Uri.https(uri, 'api/auth/login'),
@@ -66,9 +73,11 @@ class AuthModel extends Model {
   Future<void> fetchProperties() async {
     List<Property> list = [];
     print('fetch Properties');
-    final response = await http.get(
-        Uri.https(uri, 'api/users/${user.id}/properties'),
-        headers: {'token': '${user.token}'});
+    final response = await http
+        .get(Uri.https(uri, 'api/users/${user.id}/properties'), headers: {
+      'token': '${user.token}',
+      'X-Requested-With': 'XMLHttpRequest'
+    });
     print(response.statusCode);
     print(response.body);
     if (response.statusCode == 200) {
@@ -78,10 +87,16 @@ class AuthModel extends Model {
       });
       user.properties = list;
     }
+    if (response.statusCode == 403) {
+      print('403 Invalid token');
+      user = await fetchUser();
+      fetchProperties();
+    }
     print('properties fetched');
   }
 
   Future<void> onLoginPressed() async {
+    //hide banner
     inputMatches = true;
     update();
     if (_emailIsCorrect &&
@@ -91,17 +106,36 @@ class AuthModel extends Model {
       email = emailController.text;
       password = passwordController.text;
     } else {
-      _emailIsCorrect = false;
-      _passwordIsCorrect = false;
-      update();
+      _validateInputs();
       return;
     }
     user = await fetchUser();
     if (user != null) {
       user.printInfo();
+      _writeUserToStorage(user);
     } else {
       print("User is null");
     }
+  }
+
+  void _validateInputs() {
+    if (!_emailIsCorrect || emailController.text.isEmpty) {
+      _emailIsCorrect = false;
+    }
+    if (!_passwordIsCorrect || passwordController.text.isEmpty) {
+      _passwordIsCorrect = false;
+    }
+    update();
+  }
+
+  void _writeUserToStorage(User user) async {
+    await secureStorage.deleteAll();
+    await secureStorage.write(key: 'id', value: '${user.id}');
+    await secureStorage.write(key: 'name', value: '${user.name}');
+    await secureStorage.write(key: 'email', value: '${user.email}');
+    await secureStorage.write(key: 'phone', value: '${user.phone}');
+    await secureStorage.write(key: 'token', value: '${user.token}');
+    print('User data saved');
   }
 
   void update() {

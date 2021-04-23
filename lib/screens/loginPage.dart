@@ -16,6 +16,20 @@ class LoginPage extends StatefulWidget {
 
 class LoginPageState extends State<LoginPage> {
   double paddingTop;
+
+  void _onLogin() async {
+    await authModel.onLoginPressed();
+    if (user != null) {
+      while (Navigator.canPop(context)) {
+        Navigator.pop(context);
+      }
+      Navigator.pop(context);
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return PropertiesPage();
+      }));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     paddingTop = MediaQuery.of(context).padding.top;
@@ -92,14 +106,8 @@ class LoginPageState extends State<LoginPage> {
                     button(
                         title: kLogin,
                         context: context,
-                        onTap: () async {
-                          await authModel.onLoginPressed();
-                          if (user != null) {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return PropertiesPage();
-                            }));
-                          }
+                        onTap: () {
+                          _onLogin();
                         })
                   ],
                 ),
@@ -122,23 +130,18 @@ class LoginPageState extends State<LoginPage> {
       behavior: HitTestBehavior.translucent,
       child: AnimatedContainer(
         height: authModel.inputMatches ? 0 : 40,
-        width: MediaQuery.of(context).size.width,
+        //width: screenWidth,
         color: kAttentionColor,
         margin: EdgeInsets.only(top: paddingTop),
         padding: EdgeInsets.only(left: 20, right: 20),
         duration: Duration(milliseconds: 200),
-        child: FittedBox(
-          fit: BoxFit.none,
-          child: IntrinsicWidth(
-            child: Row(
-              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(kWrongInputNotification, style: kNotificationTextStyle),
-                Icon(Icons.close, color: kButtonTextColor)
-              ],
-            ),
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(kWrongInputNotification, style: kNotificationTextStyle),
+            Icon(Icons.close, color: kButtonTextColor)
+          ],
         ),
       ),
     );
