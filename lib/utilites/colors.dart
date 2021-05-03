@@ -7,3 +7,4 @@ Color kInactiveColor = Color(0xFFD0D0D0);
 Color kBackgroundColor = Color(0xFFFFFFFF);
 Color kButtonTextColor = Color(0xFFFFFFFF);
 Color kAttentionColor = Color(0xFFFB3B30);
+Color kAttention2Color = Color(0xFFFEC05C);
