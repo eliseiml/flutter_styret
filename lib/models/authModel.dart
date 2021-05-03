@@ -135,6 +135,7 @@ class AuthModel extends Model {
     await secureStorage.write(key: 'email', value: '${user.email}');
     await secureStorage.write(key: 'phone', value: '${user.phone}');
     await secureStorage.write(key: 'token', value: '${user.token}');
+    await secureStorage.write(key: 'password', value: password);
     print('User data saved');
   }
 

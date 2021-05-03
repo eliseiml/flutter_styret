@@ -25,6 +25,8 @@ class SplashPageState extends State<SplashPage> {
       String id = await authModel.secureStorage.read(key: 'id');
       String name = await authModel.secureStorage.read(key: 'name');
       String email = await authModel.secureStorage.read(key: 'email');
+      authModel.email = email;
+      authModel.password = await authModel.secureStorage.read(key: 'password');
       String phone = await authModel.secureStorage.read(key: 'phone');
       user = User(int.parse(id), name, email, phone, token);
       Navigator.pop(context);
