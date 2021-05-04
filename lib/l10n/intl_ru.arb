@@ -1,0 +1,14 @@
+{
+    "kEmail" : "Email",
+    "kPassword" : "Пароль",
+    "kInvalidEmail" : "Неверный Email",
+    "kInalidPassword" : "Неверный пароль",
+    "kLogin" : "ВОЙТИ",
+    "kWrongInputNotification" : "Неверный email или пароль",
+    "kListOfProperties" : "Список недвижимости",
+    "kNoPropertiesFound" : "Ничего не найдено",
+    "kEvents" : "События",
+    "kDiscrepancies" : "Неисправности",
+    "kRegistered" : "Дата регистрации",
+    "kDeadline" : "Срок"
+}

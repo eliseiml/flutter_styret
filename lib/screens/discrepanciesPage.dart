@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styret_app/domain/discrepancy.dart';
 import 'package:flutter_styret_app/domain/property.dart';
+import 'package:flutter_styret_app/generated/l10n.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
 
@@ -35,9 +36,10 @@ class DiscrepanciesPageState extends State<DiscrepanciesPage> {
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             child: Row(
               children: [
-                Text('Avvik', style: kPropertyTitleTextStyle),
+                Text(S.of(context).kDiscrepancies,
+                    style: kPropertyTitleTextStyle),
                 Spacer(),
-                Text('Registrert', style: kPropertyTitleTextStyle)
+                Text(S.of(context).kRegistered, style: kPropertyTitleTextStyle)
               ],
             ),
           ),

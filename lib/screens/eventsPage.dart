@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styret_app/domain/event.dart';
 import 'package:flutter_styret_app/domain/property.dart';
+import 'package:flutter_styret_app/generated/l10n.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
 
@@ -34,9 +35,9 @@ class EventsPageState extends State<EventsPage> {
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             child: Row(
               children: [
-                Text('Oppgaver', style: kPropertyTitleTextStyle),
+                Text(S.of(context).kEvents, style: kPropertyTitleTextStyle),
                 Spacer(),
-                Text('Frist', style: kPropertyTitleTextStyle)
+                Text(S.of(context).kDeadline, style: kPropertyTitleTextStyle)
               ],
             ),
           ),

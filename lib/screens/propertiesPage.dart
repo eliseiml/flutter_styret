@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styret_app/domain/property.dart';
 import 'package:flutter_styret_app/domain/user.dart';
+import 'package:flutter_styret_app/generated/l10n.dart';
 import 'package:flutter_styret_app/models/authModel.dart';
 import 'package:flutter_styret_app/screens/propertyCategoriesPage.dart';
 import 'package:flutter_styret_app/utilites/awesomeIcons.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
-import 'package:flutter_styret_app/utilites/strings.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
 
 import 'loginPage.dart';
@@ -17,7 +17,8 @@ class PropertiesPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: kAccentColor,
-        title: Text(kListOfProperties, style: kAppBarTitleTextStyle),
+        title:
+            Text(S.of(context).kListOfProperties, style: kAppBarTitleTextStyle),
         actions: [
           IconButton(
               icon: Icon(Icons.logout)
@@ -46,7 +47,7 @@ class PropertiesPage extends StatelessWidget {
                   itemCount: user.properties.length,
                   itemBuilder: (context, index) {
                     if (user.properties.length == 0) {
-                      return Text("No properties found...");
+                      return Text(S.of(context).kNoPropertiesFound);
                     }
                     return propertyTile(context, user.properties[index]);
                   }),

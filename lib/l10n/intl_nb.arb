@@ -1,0 +1,14 @@
+{
+    "kEmail" : "Epost",
+    "kPassword" : "Passord",
+    "kInvalidEmail" : "Epost er ugyldig",
+    "kInalidPassword" : "Passordet er ugyldig",
+    "kLogin" : "LOGG INN",
+    "kWrongInputNotification" : "E-post eller passord ikke stemmer overens.",
+    "kListOfProperties" : "Eindomsliste",
+    "kNoPropertiesFound" : "Nei egenskaper funnet",
+    "kEvents" : "Oppgaver",
+    "kDiscrepancies" : "Avvik",
+    "kRegistered" : "Registrert",
+    "kDeadline" : "Frist"
+}

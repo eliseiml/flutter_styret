@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styret_app/domain/property.dart';
+import 'package:flutter_styret_app/generated/l10n.dart';
 import 'package:flutter_styret_app/models/api_worker.dart';
 import 'package:flutter_styret_app/screens/eventsPage.dart';
 import 'package:flutter_styret_app/utilites/awesomeIcons.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
-
 import 'discrepanciesPage.dart';
 
 class PropertyCategoriesPage extends StatefulWidget {
@@ -39,12 +39,12 @@ class PropertyCategoriesPageState extends State<PropertyCategoriesPage> {
           if (snapshot.hasData) {
             return Column(
               children: [
-                categoryTile(context, 'Oppgaver', () {
+                categoryTile(context, S.of(context).kEvents, () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return EventsPage(property);
                   }));
                 }, AwesomeIcons.folderIcon, property.events.length),
-                categoryTile(context, 'Avvik', () {
+                categoryTile(context, S.of(context).kDiscrepancies, () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return DiscrepanciesPage(property);
                   }));

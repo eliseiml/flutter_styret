@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styret_app/domain/user.dart';
+import 'package:flutter_styret_app/generated/l10n.dart';
 import 'package:flutter_styret_app/models/authModel.dart';
 import 'package:flutter_styret_app/screens/propertiesPage.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
-import 'package:flutter_styret_app/utilites/strings.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
 import 'package:flutter_styret_app/widgets/button.dart';
 import 'package:flutter_styret_app/widgets/textInputField.dart';
@@ -59,9 +59,9 @@ class LoginPageState extends State<LoginPage> {
                     //Email input
                     inputForm(
                         context: context,
-                        title: kEmail,
+                        title: S.of(context).kEmail,
                         isEmail: true,
-                        validationMsg: 'Email is invalid',
+                        validationMsg: S.of(context).kInvalidEmail,
                         controller: authModel.emailController,
                         textInputAction: TextInputAction.next,
                         inFocus: authModel.emailInFocus,
@@ -82,8 +82,8 @@ class LoginPageState extends State<LoginPage> {
                     //Password input
                     inputForm(
                         context: context,
-                        title: kPassword,
-                        validationMsg: 'Password is invalid',
+                        title: S.of(context).kPassword,
+                        validationMsg: S.of(context).kInalidPassword,
                         controller: authModel.passwordController,
                         textInputAction: TextInputAction.done,
                         pattern: r'^[A-Z]?[a-z]+$',
@@ -104,7 +104,7 @@ class LoginPageState extends State<LoginPage> {
                     Container(height: 60),
                     //LOGIN button
                     button(
-                        title: kLogin,
+                        title: S.of(context).kLogin,
                         context: context,
                         onTap: () {
                           _onLogin();
@@ -139,7 +139,8 @@ class LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(kWrongInputNotification, style: kNotificationTextStyle),
+            Text(S.of(context).kWrongInputNotification,
+                style: kNotificationTextStyle),
             Icon(Icons.close, color: kButtonTextColor)
           ],
         ),

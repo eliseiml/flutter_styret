@@ -1,0 +1,14 @@
+{
+    "kEmail" : "Email",
+    "kPassword" : "Password",
+    "kInvalidEmail" : "Email is invalid",
+    "kInalidPassword" : "Password is invalid",
+    "kLogin" : "LOGIN",
+    "kWrongInputNotification" : "The email or password don't match.",
+    "kListOfProperties" : "List of properties",
+    "kNoPropertiesFound" : "No properties found",
+    "kEvents" : "Events",
+    "kDiscrepancies" : "Discrepancies",
+    "kRegistered" : "Registered",
+    "kDeadline" : "Deadline"
+}
