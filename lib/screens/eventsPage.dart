@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_styret_app/domain/event.dart';
 import 'package:flutter_styret_app/domain/property.dart';
 import 'package:flutter_styret_app/generated/l10n.dart';
+import 'package:flutter_styret_app/screens/eventDetailsPage.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
 import 'package:flutter_styret_app/widgets/popupMenu.dart';
@@ -62,7 +63,13 @@ class EventsPageState extends State<EventsPage> {
               child: ListView.builder(
                   itemCount: property.events.length,
                   itemBuilder: (context, index) {
-                    return eventTile(context, property.events[index], () {});
+                    return eventTile(context, property.events[index], () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return EventDetailsPage(
+                            property, property.events[index]);
+                      }));
+                    });
                   }),
             ),
           )

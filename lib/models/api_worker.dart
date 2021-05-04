@@ -47,4 +47,20 @@ class APIworker {
       return false;
     }
   }
+
+  Future<bool> getEvent(Event event) async {
+    final response = await http.get(Uri.https(uri, 'api/v2/events/${event.id}'),
+        headers: {
+          'token': '${user.token}',
+          'X-Requested-With': 'XMLHttpRequest'
+        });
+    print(response.statusCode);
+    print(response.body);
+    if (response.statusCode == 200) {
+      Map<String, dynamic> resp = jsonDecode(response.body)['event'];
+      await event.fillAdditionalFromMap(resp);
+      return true;
+    }
+    return false;
+  }
 }
