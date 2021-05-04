@@ -4,6 +4,7 @@ import 'package:flutter_styret_app/domain/property.dart';
 import 'package:flutter_styret_app/generated/l10n.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
+import 'package:flutter_styret_app/widgets/popupMenu.dart';
 
 class DiscrepanciesPage extends StatefulWidget {
   final Property property;
@@ -24,10 +25,17 @@ class DiscrepanciesPageState extends State<DiscrepanciesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         automaticallyImplyLeading: true,
         backgroundColor: kAccentColor,
         title: Text(property.name + " " + property.address,
             style: kAppBarTitleTextStyle),
+        actions: [
+          popUpMenu(context, () {
+            setState(() {});
+          }),
+          Container(width: 20)
+        ],
       ),
       body: Column(
         children: [

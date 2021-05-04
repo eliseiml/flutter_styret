@@ -6,6 +6,7 @@ import 'package:flutter_styret_app/screens/eventsPage.dart';
 import 'package:flutter_styret_app/utilites/awesomeIcons.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
+import 'package:flutter_styret_app/widgets/popupMenu.dart';
 import 'discrepanciesPage.dart';
 
 class PropertyCategoriesPage extends StatefulWidget {
@@ -28,10 +29,17 @@ class PropertyCategoriesPageState extends State<PropertyCategoriesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         automaticallyImplyLeading: true,
         backgroundColor: kAccentColor,
         title: Text(property.name + " " + property.address,
             style: kAppBarTitleTextStyle),
+        actions: [
+          popUpMenu(context, () {
+            setState(() {});
+          }),
+          Container(width: 20)
+        ],
       ),
       body: FutureBuilder(
         future: api.getPropertyEvents(property),

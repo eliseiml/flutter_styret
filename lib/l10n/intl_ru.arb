@@ -10,5 +10,10 @@
     "kEvents" : "События",
     "kDiscrepancies" : "Неисправности",
     "kRegistered" : "Дата регистрации",
-    "kDeadline" : "Срок"
+    "kDeadline" : "Срок",
+    "kLogout" : "Выйти",
+    "kLanguage" : "Язык",
+    "kLangEnglish" : "English",
+    "kLangNorwegian" : "Norsk bokmål",
+    "kLangRussian" : "Русский"
 }

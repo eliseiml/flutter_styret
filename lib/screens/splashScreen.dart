@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styret_app/domain/user.dart';
+import 'package:flutter_styret_app/generated/l10n.dart';
 import 'package:flutter_styret_app/models/authModel.dart';
 import 'package:flutter_styret_app/screens/propertiesPage.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
@@ -29,6 +30,12 @@ class SplashPageState extends State<SplashPage> {
       authModel.password = await authModel.secureStorage.read(key: 'password');
       String phone = await authModel.secureStorage.read(key: 'phone');
       user = User(int.parse(id), name, email, phone, token);
+      //load users localization if it was setted
+      String localization =
+          await authModel.secureStorage.read(key: 'localization');
+      if (localization != null) {
+        S.load(Locale(localization));
+      }
       Navigator.pop(context);
       Navigator.push(context, MaterialPageRoute(builder: (context) {
         return PropertiesPage();

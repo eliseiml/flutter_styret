@@ -19,6 +19,7 @@ class AwesomeIcon extends StatelessWidget {
 class AwesomeIcons {
   static const int folderIcon = 0xf07b;
   static const int arrowRightIcon = 0xf054;
+  static const int arrowDownIcon = 0xf107;
   static const int alertTriangleIcon = 0xf071;
   static const int propertyIcon = 0xf594; //fa-solid
   static const int menuIcon = 0xf141;

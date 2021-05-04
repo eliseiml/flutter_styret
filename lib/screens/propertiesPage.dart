@@ -7,35 +7,28 @@ import 'package:flutter_styret_app/screens/propertyCategoriesPage.dart';
 import 'package:flutter_styret_app/utilites/awesomeIcons.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
+import 'package:flutter_styret_app/widgets/popupMenu.dart';
 
-import 'loginPage.dart';
+class PropertiesPage extends StatefulWidget {
+  @override
+  PropertiesPageState createState() => PropertiesPageState();
+}
 
-class PropertiesPage extends StatelessWidget {
+class PropertiesPageState extends State<PropertiesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         automaticallyImplyLeading: false,
         backgroundColor: kAccentColor,
         title:
             Text(S.of(context).kListOfProperties, style: kAppBarTitleTextStyle),
         actions: [
-          IconButton(
-              icon: Icon(Icons.logout)
-              /*  AwesomeIcon(
-                  icon: AwesomeIcons.menuIcon, color: kButtonTextColor) */
-              ,
-              onPressed: () async {
-                await authModel.logout();
-                while (Navigator.canPop(context)) {
-                  Navigator.pop(context);
-                }
-                Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return LoginPage();
-                }));
-              }),
-          Container(width: 5)
+          popUpMenu(context, () {
+            setState(() {});
+          }),
+          Container(width: 20)
         ],
       ),
       body: FutureBuilder(

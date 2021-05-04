@@ -10,5 +10,10 @@
     "kEvents" : "Events",
     "kDiscrepancies" : "Discrepancies",
     "kRegistered" : "Registered",
-    "kDeadline" : "Deadline"
+    "kDeadline" : "Deadline",
+    "kLogout" : "Log out",
+    "kLanguage" : "Language",
+    "kLangEnglish" : "English",
+    "kLangNorwegian" : "Norsk bokmål",
+    "kLangRussian" : "Русский"
 }

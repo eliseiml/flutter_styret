@@ -10,5 +10,10 @@
     "kEvents" : "Oppgaver",
     "kDiscrepancies" : "Avvik",
     "kRegistered" : "Registrert",
-    "kDeadline" : "Frist"
+    "kDeadline" : "Frist",
+    "kLogout" : "Logg utt",
+    "kLanguage" : "Språk",
+    "kLangEnglish" : "English",
+    "kLangNorwegian" : "Norsk bokmål",
+    "kLangRussian" : "Русский"
 }

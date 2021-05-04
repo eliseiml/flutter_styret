@@ -154,6 +154,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Log out`
+  String get kLogout {
+    return Intl.message(
+      'Log out',
+      name: 'kLogout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get kLanguage {
+    return Intl.message(
+      'Language',
+      name: 'kLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get kLangEnglish {
+    return Intl.message(
+      'English',
+      name: 'kLangEnglish',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Norsk bokmål`
+  String get kLangNorwegian {
+    return Intl.message(
+      'Norsk bokmål',
+      name: 'kLangNorwegian',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Русский`
+  String get kLangRussian {
+    return Intl.message(
+      'Русский',
+      name: 'kLangRussian',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

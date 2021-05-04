@@ -47,6 +47,13 @@ TextStyle kNotificationTextStyle = TextStyle(
     fontWeight: FontWeight.w600,
     color: kButtonTextColor);
 
+TextStyle kMenuTextStyle = TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 16,
+    letterSpacing: 0.5,
+    fontWeight: FontWeight.w400,
+    color: kButtonTextColor);
+
 TextStyle kPropertyTitleTextStyle = TextStyle(
     fontFamily: 'OpenSans',
     fontSize: 18,
