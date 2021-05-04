@@ -70,7 +70,13 @@ class AuthModel extends Model {
     }
   }
 
-  Future<void> fetchProperties() async {
+  int fetchCounter = 0;
+  Future<bool> fetchProperties() async {
+    fetchCounter++;
+    if (fetchCounter > 2) {
+      fetchCounter = 0;
+      return false;
+    }
     List<Property> list = [];
     print('fetch Properties');
     final response = await http
@@ -86,13 +92,18 @@ class AuthModel extends Model {
         list.add(Property.fromMap(element));
       });
       user.properties = list;
+      fetchCounter = 0;
+      return true;
     }
     if (response.statusCode == 403) {
       print('403 Invalid token');
       user = await fetchUser();
-      fetchProperties();
+      await fetchProperties();
+    } else {
+      return false;
     }
     print('properties fetched');
+    return false;
   }
 
   Future<void> onLoginPressed() async {

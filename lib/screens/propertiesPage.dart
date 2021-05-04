@@ -34,24 +34,31 @@ class PropertiesPageState extends State<PropertiesPage> {
       body: FutureBuilder(
         future: authModel.fetchProperties(),
         builder: (context, snapshot) {
-          if (user.properties.length > 0) {
-            return SizedBox(
-              child: ListView.builder(
-                  itemCount: user.properties.length,
-                  itemBuilder: (context, index) {
-                    if (user.properties.length == 0) {
-                      return Text(S.of(context).kNoPropertiesFound);
-                    }
-                    return propertyTile(context, user.properties[index]);
-                  }),
-            );
-          } else {
-            return Center(
+          Widget content;
+          if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.data == true) {
+              content = SizedBox(
+                child: ListView.builder(
+                    itemCount: user.properties.length,
+                    itemBuilder: (context, index) {
+                      return propertyTile(context, user.properties[index]);
+                    }),
+              );
+            } else {
+              content = Center(
+                child: Text(S.of(context).kLoadingError,
+                    style: kPropertyTitleTextStyle),
+              );
+            }
+          }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            content = Center(
               child: CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(kAccentColor),
               ),
             );
           }
+          return content;
         },
       ),
     );

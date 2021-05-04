@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "kLangRussian" : MessageLookupByLibrary.simpleMessage("Русский"),
     "kLanguage" : MessageLookupByLibrary.simpleMessage("Язык"),
     "kListOfProperties" : MessageLookupByLibrary.simpleMessage("Список недвижимости"),
+    "kLoadingError" : MessageLookupByLibrary.simpleMessage("Ошибка загрузки данных"),
     "kLogin" : MessageLookupByLibrary.simpleMessage("ВОЙТИ"),
     "kLogout" : MessageLookupByLibrary.simpleMessage("Выйти"),
     "kNoPropertiesFound" : MessageLookupByLibrary.simpleMessage("Ничего не найдено"),

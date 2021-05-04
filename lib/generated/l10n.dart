@@ -204,6 +204,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Loading error`
+  String get kLoadingError {
+    return Intl.message(
+      'Loading error',
+      name: 'kLoadingError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -15,5 +15,6 @@
     "kLanguage" : "Язык",
     "kLangEnglish" : "English",
     "kLangNorwegian" : "Norsk bokmål",
-    "kLangRussian" : "Русский"
+    "kLangRussian" : "Русский",
+    "kLoadingError" : "Ошибка загрузки данных"
 }

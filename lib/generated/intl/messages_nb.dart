@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "kLangRussian" : MessageLookupByLibrary.simpleMessage("Русский"),
     "kLanguage" : MessageLookupByLibrary.simpleMessage("Språk"),
     "kListOfProperties" : MessageLookupByLibrary.simpleMessage("Eindomsliste"),
+    "kLoadingError" : MessageLookupByLibrary.simpleMessage("Lasting feil"),
     "kLogin" : MessageLookupByLibrary.simpleMessage("LOGG INN"),
     "kLogout" : MessageLookupByLibrary.simpleMessage("Logg utt"),
     "kNoPropertiesFound" : MessageLookupByLibrary.simpleMessage("Nei egenskaper funnet"),
