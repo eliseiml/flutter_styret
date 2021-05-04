@@ -3,6 +3,7 @@ import 'package:flutter_styret_app/domain/property.dart';
 import 'package:flutter_styret_app/domain/user.dart';
 import 'package:flutter_styret_app/models/authModel.dart';
 import 'package:flutter_styret_app/screens/propertyCategoriesPage.dart';
+import 'package:flutter_styret_app/utilites/awesomeIcons.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
 import 'package:flutter_styret_app/utilites/strings.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
@@ -19,7 +20,10 @@ class PropertiesPage extends StatelessWidget {
         title: Text(kListOfProperties, style: kAppBarTitleTextStyle),
         actions: [
           IconButton(
-              icon: Icon(Icons.logout),
+              icon: Icon(Icons.logout)
+              /*  AwesomeIcon(
+                  icon: AwesomeIcons.menuIcon, color: kButtonTextColor) */
+              ,
               onPressed: () async {
                 await authModel.logout();
                 while (Navigator.canPop(context)) {
@@ -77,7 +81,10 @@ class PropertiesPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             //icon
-            Image.asset('assets/icons/house.png', height: 18, width: 20),
+            AwesomeIcon(
+                icon: AwesomeIcons.propertyIcon,
+                fontFamily: 'fa-solid',
+                color: kAccentColor),
             //Spacing
             Container(width: 15),
             //Title

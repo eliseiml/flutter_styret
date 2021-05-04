@@ -2,7 +2,7 @@ class Discrepancy {
   String id;
   String title;
   String cooperativeId;
-  String improvementProgressStatus;
+  String _improvementProgressStatus;
   String lastUpdated;
   String created;
   String responsibleUserId;
@@ -15,11 +15,30 @@ class Discrepancy {
   DateTime createdDateTime;
   DateTime dueDateTime;
 
+  String get improvementProgressStatus {
+    switch (_improvementProgressStatus) {
+      case 'awaitOnImprovement':
+        return 'Await on improvement';
+        break;
+      case 'awaitOnAccept':
+        return 'Await on accept';
+        break;
+      case 'awaitOnSolution':
+        return 'Await on solution';
+        break;
+      case 'discCreated':
+        return 'Disc created';
+        break;
+      default:
+        return 'Undefined status';
+    }
+  }
+
   Discrepancy(
       this.id,
       this.title,
       this.cooperativeId,
-      this.improvementProgressStatus,
+      this._improvementProgressStatus,
       this.lastUpdated,
       this.created,
       this.responsibleUserId,
