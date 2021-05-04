@@ -16,5 +16,10 @@
     "kLangEnglish" : "English",
     "kLangNorwegian" : "Norsk bokmål",
     "kLangRussian" : "Русский",
-    "kLoadingError" : "Loading error"
+    "kLoadingError" : "Loading error",
+    "kDiscStatusAwaitOnImprove" : "Await on improvement",
+    "kDiscStatusAwaitOnAccept" : "Await on accept",
+    "kDiscStatusAwaitOnSolution" : "Await on solution",
+    "kDiscStatusDiscCreated" : "Discrepancy created",
+    "kDiscStatusUndefined" : "Undefined status"
 }

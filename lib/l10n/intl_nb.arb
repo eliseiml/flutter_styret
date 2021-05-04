@@ -16,5 +16,10 @@
     "kLangEnglish" : "English",
     "kLangNorwegian" : "Norsk bokmål",
     "kLangRussian" : "Русский",
-    "kLoadingError" : "Lasting feil"
+    "kLoadingError" : "Lasting feil",
+    "kDiscStatusAwaitOnImprove" : "Venter på forbedring",
+    "kDiscStatusAwaitOnAccept" : "Venter på godta for",
+    "kDiscStatusAwaitOnSolution" : "Venter på løsning",
+    "kDiscStatusDiscCreated" : "Avvik opprettet",
+    "kDiscStatusUndefined" : "Udefinert status"
 }

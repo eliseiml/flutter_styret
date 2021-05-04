@@ -214,6 +214,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Await on improvement`
+  String get kDiscStatusAwaitOnImprove {
+    return Intl.message(
+      'Await on improvement',
+      name: 'kDiscStatusAwaitOnImprove',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Await on accept`
+  String get kDiscStatusAwaitOnAccept {
+    return Intl.message(
+      'Await on accept',
+      name: 'kDiscStatusAwaitOnAccept',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Await on solution`
+  String get kDiscStatusAwaitOnSolution {
+    return Intl.message(
+      'Await on solution',
+      name: 'kDiscStatusAwaitOnSolution',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discrepancy created`
+  String get kDiscStatusDiscCreated {
+    return Intl.message(
+      'Discrepancy created',
+      name: 'kDiscStatusDiscCreated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Undefined status`
+  String get kDiscStatusUndefined {
+    return Intl.message(
+      'Undefined status',
+      name: 'kDiscStatusUndefined',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -125,7 +125,7 @@ class DiscrepanciesPageState extends State<DiscrepanciesPage> {
                 ),
                 Container(height: 5),
                 Text(
-                  discrepancy.improvementProgressStatus,
+                  discrepancy.getImprovementProgressStatus(context),
                   style: kInputTextStyle,
                 )
               ],

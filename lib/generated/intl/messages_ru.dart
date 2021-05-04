@@ -22,6 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "kDeadline" : MessageLookupByLibrary.simpleMessage("Срок"),
+    "kDiscStatusAwaitOnAccept" : MessageLookupByLibrary.simpleMessage("Ожидает подтверждения"),
+    "kDiscStatusAwaitOnImprove" : MessageLookupByLibrary.simpleMessage("Ожидает продолжения"),
+    "kDiscStatusAwaitOnSolution" : MessageLookupByLibrary.simpleMessage("Ожидает решения"),
+    "kDiscStatusDiscCreated" : MessageLookupByLibrary.simpleMessage("Неисправность создана"),
+    "kDiscStatusUndefined" : MessageLookupByLibrary.simpleMessage("Неопределенный статус"),
     "kDiscrepancies" : MessageLookupByLibrary.simpleMessage("Неисправности"),
     "kEmail" : MessageLookupByLibrary.simpleMessage("Email"),
     "kEvents" : MessageLookupByLibrary.simpleMessage("События"),

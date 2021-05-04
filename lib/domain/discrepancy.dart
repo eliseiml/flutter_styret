@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_styret_app/generated/l10n.dart';
+
 class Discrepancy {
   String id;
   String title;
@@ -15,22 +18,22 @@ class Discrepancy {
   DateTime createdDateTime;
   DateTime dueDateTime;
 
-  String get improvementProgressStatus {
+  String getImprovementProgressStatus(BuildContext context) {
     switch (_improvementProgressStatus) {
       case 'awaitOnImprovement':
-        return 'Await on improvement';
+        return S.of(context).kDiscStatusAwaitOnImprove;
         break;
       case 'awaitOnAccept':
-        return 'Await on accept';
+        return S.of(context).kDiscStatusAwaitOnAccept;
         break;
       case 'awaitOnSolution':
-        return 'Await on solution';
+        return S.of(context).kDiscStatusAwaitOnSolution;
         break;
       case 'discCreated':
-        return 'Disc created';
+        return S.of(context).kDiscStatusDiscCreated;
         break;
       default:
-        return 'Undefined status';
+        return S.of(context).kDiscStatusUndefined;
     }
   }
 
