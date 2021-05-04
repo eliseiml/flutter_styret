@@ -20,6 +20,10 @@ class EventsPageState extends State<EventsPage> {
 
   EventsPageState(this.property);
 
+  Future<void> _updateData() async {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,11 +54,17 @@ class EventsPageState extends State<EventsPage> {
             ),
           ),
           Expanded(
-            child: ListView.builder(
-                itemCount: property.events.length,
-                itemBuilder: (context, index) {
-                  return eventTile(context, property.events[index], () {});
-                }),
+            child: RefreshIndicator(
+              color: kAccentColor,
+              onRefresh: () {
+                return _updateData();
+              },
+              child: ListView.builder(
+                  itemCount: property.events.length,
+                  itemBuilder: (context, index) {
+                    return eventTile(context, property.events[index], () {});
+                  }),
+            ),
           )
         ],
       ),

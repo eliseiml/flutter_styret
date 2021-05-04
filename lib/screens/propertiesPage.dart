@@ -15,6 +15,10 @@ class PropertiesPage extends StatefulWidget {
 }
 
 class PropertiesPageState extends State<PropertiesPage> {
+  Future<void> _updateData() async {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,11 +42,17 @@ class PropertiesPageState extends State<PropertiesPage> {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.data == true) {
               content = SizedBox(
-                child: ListView.builder(
-                    itemCount: user.properties.length,
-                    itemBuilder: (context, index) {
-                      return propertyTile(context, user.properties[index]);
-                    }),
+                child: RefreshIndicator(
+                  color: kAccentColor,
+                  onRefresh: () {
+                    return _updateData();
+                  },
+                  child: ListView.builder(
+                      itemCount: user.properties.length,
+                      itemBuilder: (context, index) {
+                        return propertyTile(context, user.properties[index]);
+                      }),
+                ),
               );
             } else {
               content = Center(

@@ -21,6 +21,10 @@ class DiscrepanciesPageState extends State<DiscrepanciesPage> {
 
   DiscrepanciesPageState(this.property);
 
+  Future<void> _updateData() async {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,11 +72,17 @@ class DiscrepanciesPageState extends State<DiscrepanciesPage> {
       content.add(discrepancyTile(context, discrepancy, () {}));
     });
     return Expanded(
-      child: ListView.builder(
-          itemCount: content.length,
-          itemBuilder: (context, index) {
-            return content[index];
-          }),
+      child: RefreshIndicator(
+        color: kAccentColor,
+        onRefresh: () {
+          return _updateData();
+        },
+        child: ListView.builder(
+            itemCount: content.length,
+            itemBuilder: (context, index) {
+              return content[index];
+            }),
+      ),
     );
   }
 
