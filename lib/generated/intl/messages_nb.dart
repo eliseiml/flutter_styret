@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "kDiscStatusDiscCreated" : MessageLookupByLibrary.simpleMessage("Avvik opprettet"),
     "kDiscStatusUndefined" : MessageLookupByLibrary.simpleMessage("Udefinert status"),
     "kDiscrepancies" : MessageLookupByLibrary.simpleMessage("Avvik"),
+    "kDontKnow" : MessageLookupByLibrary.simpleMessage("Vet ikke"),
     "kEmail" : MessageLookupByLibrary.simpleMessage("Epost"),
     "kEvents" : MessageLookupByLibrary.simpleMessage("Oppgaver"),
     "kInalidPassword" : MessageLookupByLibrary.simpleMessage("Passordet er ugyldig"),
@@ -40,9 +41,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "kLoadingError" : MessageLookupByLibrary.simpleMessage("Lasting feil"),
     "kLogin" : MessageLookupByLibrary.simpleMessage("LOGG INN"),
     "kLogout" : MessageLookupByLibrary.simpleMessage("Logg utt"),
+    "kNo" : MessageLookupByLibrary.simpleMessage("Nei"),
     "kNoPropertiesFound" : MessageLookupByLibrary.simpleMessage("Nei egenskaper funnet"),
     "kPassword" : MessageLookupByLibrary.simpleMessage("Passord"),
     "kRegistered" : MessageLookupByLibrary.simpleMessage("Registrert"),
-    "kWrongInputNotification" : MessageLookupByLibrary.simpleMessage("E-post eller passord ikke stemmer overens.")
+    "kWrongInputNotification" : MessageLookupByLibrary.simpleMessage("E-post eller passord ikke stemmer overens."),
+    "kYes" : MessageLookupByLibrary.simpleMessage("Ja")
   };
 }

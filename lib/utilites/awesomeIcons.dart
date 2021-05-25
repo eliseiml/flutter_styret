@@ -23,4 +23,8 @@ class AwesomeIcons {
   static const int alertTriangleIcon = 0xf071;
   static const int propertyIcon = 0xf594; //fa-solid
   static const int menuIcon = 0xf141;
+  static const int calendarIcon = 0xf073; //fa-solid
+  static const int dropDownIcon = 0xf0d7;
+  static const int rotateIcon = 0xf0e2;
+  static const int pictureIcon = 0xf030; //fa-solid
 }

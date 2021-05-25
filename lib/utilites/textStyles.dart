@@ -67,3 +67,17 @@ TextStyle kPropertyAddressTextStyle = TextStyle(
     letterSpacing: 0.5,
     fontWeight: FontWeight.w400,
     color: kInactiveTextColor);
+
+TextStyle kSubTaskTitleTextStyle = TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 16,
+    letterSpacing: 0.5,
+    fontWeight: FontWeight.w400,
+    color: kTextColor);
+
+TextStyle kSubTaskHintTextStyle = TextStyle(
+    fontFamily: 'OpenSans',
+    fontSize: 16,
+    letterSpacing: 0.5,
+    fontWeight: FontWeight.w400,
+    color: kInactiveTextColor);

@@ -264,6 +264,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Yes`
+  String get kYes {
+    return Intl.message(
+      'Yes',
+      name: 'kYes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get kNo {
+    return Intl.message(
+      'No',
+      name: 'kNo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't know`
+  String get kDontKnow {
+    return Intl.message(
+      'Don\'t know',
+      name: 'kDontKnow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take picture or use gallery?`
+  String get kPictureDialogTitle {
+    return Intl.message(
+      'Take picture or use gallery?',
+      name: 'kPictureDialogTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take picture`
+  String get kTakePicture {
+    return Intl.message(
+      'Take picture',
+      name: 'kTakePicture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload from gallery`
+  String get kUseGallery {
+    return Intl.message(
+      'Upload from gallery',
+      name: 'kUseGallery',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

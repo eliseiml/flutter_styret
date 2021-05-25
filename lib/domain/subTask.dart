@@ -6,7 +6,8 @@ class SubTask {
   String standard;
   bool required;
   int rank;
-  List options = [];
+  List unmappedOptions = [];
+  List<String> options = [];
   String answer;
   String timestamp;
   int eventId;
@@ -19,10 +20,17 @@ class SubTask {
       this.standard,
       this.required,
       this.rank,
-      this.options,
+      this.unmappedOptions,
       this.answer,
       this.timestamp,
-      this.eventId});
+      this.eventId}) {
+    if (type == 'multiple_choice') {
+      List tmp = unmappedOptions[0]['choices'];
+      tmp.forEach((element) {
+        options.add(element.toString());
+      });
+    }
+  }
 
   factory SubTask.fromMap(Map<String, dynamic> map) {
     return SubTask(
@@ -33,7 +41,7 @@ class SubTask {
         standard: map['standard'],
         required: map['required'],
         rank: map['rank'],
-        options: map['options'],
+        unmappedOptions: map['options'],
         answer: map['answer'],
         timestamp: map['timestamp'],
         eventId: map['event_id']);

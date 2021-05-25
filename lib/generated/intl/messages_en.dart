@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "kDiscStatusDiscCreated" : MessageLookupByLibrary.simpleMessage("Discrepancy created"),
     "kDiscStatusUndefined" : MessageLookupByLibrary.simpleMessage("Undefined status"),
     "kDiscrepancies" : MessageLookupByLibrary.simpleMessage("Discrepancies"),
+    "kDontKnow" : MessageLookupByLibrary.simpleMessage("Don\'t know"),
     "kEmail" : MessageLookupByLibrary.simpleMessage("Email"),
     "kEvents" : MessageLookupByLibrary.simpleMessage("Events"),
     "kInalidPassword" : MessageLookupByLibrary.simpleMessage("Password is invalid"),
@@ -40,9 +41,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "kLoadingError" : MessageLookupByLibrary.simpleMessage("Loading error"),
     "kLogin" : MessageLookupByLibrary.simpleMessage("LOGIN"),
     "kLogout" : MessageLookupByLibrary.simpleMessage("Log out"),
+    "kNo" : MessageLookupByLibrary.simpleMessage("No"),
     "kNoPropertiesFound" : MessageLookupByLibrary.simpleMessage("No properties found"),
     "kPassword" : MessageLookupByLibrary.simpleMessage("Password"),
+    "kPictureDialogTitle" : MessageLookupByLibrary.simpleMessage("Take picture or use gallery?"),
     "kRegistered" : MessageLookupByLibrary.simpleMessage("Registered"),
-    "kWrongInputNotification" : MessageLookupByLibrary.simpleMessage("The email or password don\'t match.")
+    "kTakePicture" : MessageLookupByLibrary.simpleMessage("Take picture"),
+    "kUseGallery" : MessageLookupByLibrary.simpleMessage("Upload from gallery"),
+    "kWrongInputNotification" : MessageLookupByLibrary.simpleMessage("The email or password don\'t match."),
+    "kYes" : MessageLookupByLibrary.simpleMessage("Yes")
   };
 }

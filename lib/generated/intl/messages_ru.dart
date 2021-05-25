@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "kDiscStatusDiscCreated" : MessageLookupByLibrary.simpleMessage("Неисправность создана"),
     "kDiscStatusUndefined" : MessageLookupByLibrary.simpleMessage("Неопределенный статус"),
     "kDiscrepancies" : MessageLookupByLibrary.simpleMessage("Неисправности"),
+    "kDontKnow" : MessageLookupByLibrary.simpleMessage("Не знаю"),
     "kEmail" : MessageLookupByLibrary.simpleMessage("Email"),
     "kEvents" : MessageLookupByLibrary.simpleMessage("События"),
     "kInalidPassword" : MessageLookupByLibrary.simpleMessage("Неверный пароль"),
@@ -40,9 +41,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "kLoadingError" : MessageLookupByLibrary.simpleMessage("Ошибка загрузки данных"),
     "kLogin" : MessageLookupByLibrary.simpleMessage("ВОЙТИ"),
     "kLogout" : MessageLookupByLibrary.simpleMessage("Выйти"),
+    "kNo" : MessageLookupByLibrary.simpleMessage("Нет"),
     "kNoPropertiesFound" : MessageLookupByLibrary.simpleMessage("Ничего не найдено"),
     "kPassword" : MessageLookupByLibrary.simpleMessage("Пароль"),
     "kRegistered" : MessageLookupByLibrary.simpleMessage("Дата регистрации"),
-    "kWrongInputNotification" : MessageLookupByLibrary.simpleMessage("Неверный email или пароль")
+    "kWrongInputNotification" : MessageLookupByLibrary.simpleMessage("Неверный email или пароль"),
+    "kYes" : MessageLookupByLibrary.simpleMessage("Да")
   };
 }

@@ -9,3 +9,4 @@ Color kButtonTextColor = Color(0xFFFFFFFF);
 Color kAttentionColor = Color(0xFFFB3B30);
 Color kAttention2Color = Color(0xFFFEC05C);
 Color kMenuBackgroundColor = Color(0xFF323232);
+Color kActiveColor = Color(0xFF00AD9B);

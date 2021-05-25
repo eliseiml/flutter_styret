@@ -6,6 +6,7 @@ import 'package:flutter_styret_app/utilites/colors.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
 import 'package:flutter_styret_app/widgets/popupMenu.dart';
 import 'package:scoped_model/scoped_model.dart';
+import '../widgets/subTasksWidgets.dart';
 
 class EventDetailsPage extends StatefulWidget {
   final Event event;
@@ -56,20 +57,23 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
                   );
                 }
                 if (snapshot.connectionState == ConnectionState.done) {
-                  content = Container(
-                    height: 500,
-                    child: ListView.builder(
-                        itemCount: event.subTasks.length,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            height: 50,
-                            child: ListTile(
-                              title: Text(event.subTasks[index].title),
-                              subtitle: Text(event.subTasks[index].desc),
-                              trailing: Text(event.subTasks[index].type),
-                            ),
-                          );
-                        }),
+                  content = SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        shortLongText(
+                            context: context, subTask: event.subTasks[0]),
+                        shortLongText(
+                            context: context, subTask: event.subTasks[1]),
+                        shortLongText(
+                            context: context, subTask: event.subTasks[2]),
+                        DatePicker(event.subTasks[3]),
+                        YesNoCheckBox(event.subTasks[4]),
+                        TriplePicker(event.subTasks[5]),
+                        MultiChoise(event.subTasks[6]),
+                        ImagePickerBlock(event.subTasks[7]),
+                        Container(height: 50)
+                      ],
+                    ),
                   );
                 }
                 return content;

@@ -21,5 +21,11 @@
     "kDiscStatusAwaitOnAccept" : "Await on accept",
     "kDiscStatusAwaitOnSolution" : "Await on solution",
     "kDiscStatusDiscCreated" : "Discrepancy created",
-    "kDiscStatusUndefined" : "Undefined status"
+    "kDiscStatusUndefined" : "Undefined status",
+    "kYes" : "Yes",
+    "kNo" : "No",
+    "kDontKnow" : "Don't know",
+    "kPictureDialogTitle" : "Take picture or use gallery?",
+    "kTakePicture" : "Take picture",
+    "kUseGallery" : "Upload from gallery"
 }

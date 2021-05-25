@@ -21,5 +21,8 @@
     "kDiscStatusAwaitOnAccept" : "Venter på godta for",
     "kDiscStatusAwaitOnSolution" : "Venter på løsning",
     "kDiscStatusDiscCreated" : "Avvik opprettet",
-    "kDiscStatusUndefined" : "Udefinert status"
+    "kDiscStatusUndefined" : "Udefinert status",
+    "kYes" : "Ja",
+    "kNo" : "Nei",
+    "kDontKnow" : "Vet ikke"
 }

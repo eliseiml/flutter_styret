@@ -21,5 +21,8 @@
     "kDiscStatusAwaitOnAccept" : "Ожидает подтверждения",
     "kDiscStatusAwaitOnSolution" : "Ожидает решения",
     "kDiscStatusDiscCreated" : "Неисправность создана",
-    "kDiscStatusUndefined" : "Неопределенный статус"
+    "kDiscStatusUndefined" : "Неопределенный статус",
+    "kYes" : "Да",
+    "kNo" : "Нет",
+    "kDontKnow" : "Не знаю"
 }
