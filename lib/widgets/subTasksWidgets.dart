@@ -7,8 +7,9 @@ import 'package:flutter_styret_app/utilites/awesomeIcons.dart';
 import 'package:flutter_styret_app/utilites/colors.dart';
 import 'package:flutter_styret_app/utilites/textStyles.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:file_picker/file_picker.dart';
 
-//Input filed for short text, long text and numbers
+//1,2,3 - Input filed for short text, long text and numbers
 Widget shortLongText(
     {BuildContext context,
     SubTask subTask,
@@ -35,6 +36,7 @@ Widget shortLongText(
                   maxLines: null,
                   controller: controller,
                   maxLength: maxLength,
+                  initialValue: subTask.answer != '' ? subTask.answer : null,
                   keyboardType:
                       numbersOnly ? TextInputType.number : TextInputType.text,
                   inputFormatters: numbersOnly
@@ -67,7 +69,7 @@ Widget shortLongText(
       ));
 }
 
-//Date picker
+//4 - Date picker
 class DatePicker extends StatefulWidget {
   final SubTask subTask;
   DatePicker(this.subTask);
@@ -79,7 +81,12 @@ class _DatePickerState extends State<DatePicker> {
   DateTime selectedDate = DateTime.now();
   final SubTask subTask;
 
-  _DatePickerState(this.subTask) : assert(subTask != null);
+  _DatePickerState(this.subTask) : assert(subTask != null) {
+    if (subTask.answer.length > 0) {
+      selectedDate = DateTime.tryParse(subTask.answer);
+    }
+    selectedDate ?? DateTime.now();
+  }
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
@@ -139,7 +146,7 @@ class _DatePickerState extends State<DatePicker> {
   }
 }
 
-//Yes/no question checkbox
+//5 - Yes/no question checkbox
 class YesNoCheckBox extends StatefulWidget {
   final SubTask subTask;
   YesNoCheckBox(this.subTask);
@@ -150,7 +157,18 @@ class YesNoCheckBox extends StatefulWidget {
 class _YesNoCheckBoxState extends State<YesNoCheckBox> {
   bool checked = false;
   final SubTask subTask;
-  _YesNoCheckBoxState(this.subTask) : assert(subTask != null);
+  _YesNoCheckBoxState(this.subTask) : assert(subTask != null) {
+    switch (subTask.answer) {
+      case 'Ja':
+        checked = true;
+        break;
+      case 'Nei':
+        checked = false;
+        break;
+      default:
+        checked = false;
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -182,7 +200,7 @@ class _YesNoCheckBoxState extends State<YesNoCheckBox> {
   }
 }
 
-//Yes/no/don'tKnow picker
+//6 - Yes/no/don'tKnow picker
 class TriplePicker extends StatefulWidget {
   final SubTask subTask;
   TriplePicker(this.subTask);
@@ -194,7 +212,21 @@ class _TriplePickerState extends State<TriplePicker> {
   final SubTask subTask;
   List<String> items = ['Yes', 'No', "Don't know"];
   String value = "Don't know";
-  _TriplePickerState(this.subTask) : assert(subTask != null);
+  _TriplePickerState(this.subTask) : assert(subTask != null) {
+    switch (subTask.answer) {
+      case 'Ja':
+        value = items[0];
+        break;
+      case 'Nei':
+        value = items[1];
+        break;
+      case 'Vet ikke':
+        value = items[2];
+        break;
+      default:
+        value = items[2];
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -233,7 +265,7 @@ class _TriplePickerState extends State<TriplePicker> {
   }
 }
 
-//Multiple choise picker
+//7 - Multiple choise picker
 class MultiChoise extends StatefulWidget {
   final SubTask subTask;
   MultiChoise(this.subTask);
@@ -245,7 +277,11 @@ class _MultiChoiseState extends State<MultiChoise> {
   final SubTask subTask;
   String value = '';
   _MultiChoiseState(this.subTask) : assert(subTask != null) {
-    value = subTask.options[0];
+    if (subTask.options.contains(subTask.answer)) {
+      value = subTask.answer;
+    } else {
+      value = null;
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -282,7 +318,7 @@ class _MultiChoiseState extends State<MultiChoise> {
   }
 }
 
-//Image picker
+//8 - Image picker
 class ImagePickerBlock extends StatefulWidget {
   final SubTask subTask;
   ImagePickerBlock(this.subTask);
@@ -292,10 +328,17 @@ class ImagePickerBlock extends StatefulWidget {
 
 class _ImagePickerBlockState extends State<ImagePickerBlock> {
   File _image;
+  String _netImageUrl;
   ImagePicker picker = ImagePicker();
   SubTask subTask;
+  int rotation = 0;
 
-  _ImagePickerBlockState(this.subTask) : assert(subTask != null);
+  _ImagePickerBlockState(this.subTask) : assert(subTask != null) {
+    if (subTask.answer != '') {
+      _netImageUrl = subTask.answer;
+      _image = null;
+    }
+  }
 
   Future<void> _imgFromCamera() async {
     PickedFile pickedFile;
@@ -347,7 +390,7 @@ class _ImagePickerBlockState extends State<ImagePickerBlock> {
     return Container(
       margin: EdgeInsets.only(top: 15, left: 20, right: 20),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
             children: [
@@ -366,7 +409,109 @@ class _ImagePickerBlockState extends State<ImagePickerBlock> {
             ],
           ),
           Text(subTask.desc, style: kSubTaskHintTextStyle),
-          _image == null ? Text('No image') : Image.file(_image, height: 150)
+          _image == null && _netImageUrl == ''
+              ? Container()
+              : GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+                  onTap: () {
+                    setState(() {
+                      rotation++;
+                    });
+                  },
+                  child: Container(
+                    height: 40,
+                    width: 40,
+                    alignment: Alignment.center,
+                    child: AwesomeIcon(
+                        icon: AwesomeIcons.rotateIcon, color: kAccentColor),
+                  ),
+                ),
+          _image == null
+              ? (_netImageUrl == ''
+                  ? Text('No image')
+                  : RotatedBox(
+                      quarterTurns: rotation,
+                      child: Image.network(_netImageUrl, height: 250)))
+              : RotatedBox(
+                  quarterTurns: rotation,
+                  child: Image.file(_image, height: 250))
+        ],
+      ),
+    );
+  }
+}
+
+//9 - FilePicker block
+class FilePickerBlock extends StatefulWidget {
+  final SubTask subTask;
+  FilePickerBlock(this.subTask);
+  @override
+  _FilePickerBlockState createState() => _FilePickerBlockState(subTask);
+}
+
+class _FilePickerBlockState extends State<FilePickerBlock> {
+  SubTask subTask;
+  String _netFileUrl;
+  PlatformFile _file;
+
+  _FilePickerBlockState(this.subTask) : assert(subTask != null) {
+    if (subTask.answer != '') {
+      _netFileUrl = subTask.answer;
+    }
+  }
+
+  Future<void> _pickFile() async {
+    FilePickerResult result = await FilePicker.platform.pickFiles(
+      type: FileType.any,
+      //allowedExtensions: ['pdf', 'txt'], Uncomment after solving the issue https://github.com/miguelpruivo/flutter_file_picker/issues/725;
+    );
+
+    if (result != null) {
+      _file = result.files.first;
+
+      print(_file.name);
+      print(_file.bytes);
+      print(_file.size);
+      print(_file.extension);
+      print(_file.path);
+    } else {
+      print("Cancelled picker");
+    }
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(subTask.title + (subTask.required ? ' *' : ''),
+              style: kSubTaskTitleTextStyle),
+          Container(height: 5),
+          Row(
+            children: [
+              AwesomeIcon(
+                icon: AwesomeIcons.fileIcon,
+                color: kAccentColor,
+                fontFamily: 'fa-solid',
+              ),
+              Expanded(
+                  child: Text(_file != null ? _file.name : 'N/A',
+                      style: kSubTaskTitleTextStyle)),
+              GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {
+                  _pickFile();
+                },
+                child: AwesomeIcon(
+                    icon: AwesomeIcons.uploadIcon, color: kAccentColor),
+              )
+            ],
+          ),
+          Container(height: 5),
+          Text(subTask.desc, style: kSubTaskHintTextStyle)
         ],
       ),
     );

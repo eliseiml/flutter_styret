@@ -71,6 +71,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
                         TriplePicker(event.subTasks[5]),
                         MultiChoise(event.subTasks[6]),
                         ImagePickerBlock(event.subTasks[7]),
+                        FilePickerBlock(event.subTasks[8]),
                         Container(height: 50)
                       ],
                     ),

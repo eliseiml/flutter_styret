@@ -24,5 +24,9 @@
     "kDiscStatusUndefined" : "Udefinert status",
     "kYes" : "Ja",
     "kNo" : "Nei",
-    "kDontKnow" : "Vet ikke"
+    "kDontKnow" : "Vet ikke",
+    "kPictureDialogTitle" : "Ta et bilde eller bruke galleriet?",
+    "kTakePicture" : "Ta bilde",
+    "kUseGallery" : "Laste opp fra galleri",
+    "kSave" : "Lagre"
 }

@@ -27,4 +27,6 @@ class AwesomeIcons {
   static const int dropDownIcon = 0xf0d7;
   static const int rotateIcon = 0xf0e2;
   static const int pictureIcon = 0xf030; //fa-solid
+  static const int fileIcon = 0xf56c; //fa-solid
+  static const int uploadIcon = 0xf093;
 }

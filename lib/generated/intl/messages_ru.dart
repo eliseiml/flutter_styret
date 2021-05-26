@@ -44,7 +44,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "kNo" : MessageLookupByLibrary.simpleMessage("Нет"),
     "kNoPropertiesFound" : MessageLookupByLibrary.simpleMessage("Ничего не найдено"),
     "kPassword" : MessageLookupByLibrary.simpleMessage("Пароль"),
+    "kPictureDialogTitle" : MessageLookupByLibrary.simpleMessage("Сделать фото или загрузить из галереи?"),
     "kRegistered" : MessageLookupByLibrary.simpleMessage("Дата регистрации"),
+    "kSave" : MessageLookupByLibrary.simpleMessage("Сохранить"),
+    "kTakePicture" : MessageLookupByLibrary.simpleMessage("Сделать фото"),
+    "kUseGallery" : MessageLookupByLibrary.simpleMessage("Загрузить из галереи"),
     "kWrongInputNotification" : MessageLookupByLibrary.simpleMessage("Неверный email или пароль"),
     "kYes" : MessageLookupByLibrary.simpleMessage("Да")
   };

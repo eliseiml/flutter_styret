@@ -27,5 +27,6 @@
     "kDontKnow" : "Don't know",
     "kPictureDialogTitle" : "Take picture or use gallery?",
     "kTakePicture" : "Take picture",
-    "kUseGallery" : "Upload from gallery"
+    "kUseGallery" : "Upload from gallery",
+    "kSave" : "Save"
 }

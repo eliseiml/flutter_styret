@@ -24,5 +24,9 @@
     "kDiscStatusUndefined" : "Неопределенный статус",
     "kYes" : "Да",
     "kNo" : "Нет",
-    "kDontKnow" : "Не знаю"
+    "kDontKnow" : "Не знаю",
+    "kPictureDialogTitle" : "Сделать фото или загрузить из галереи?",
+    "kTakePicture" : "Сделать фото",
+    "kUseGallery" : "Загрузить из галереи",
+    "kSave" : "Сохранить"
 }

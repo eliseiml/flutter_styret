@@ -46,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "kPassword" : MessageLookupByLibrary.simpleMessage("Password"),
     "kPictureDialogTitle" : MessageLookupByLibrary.simpleMessage("Take picture or use gallery?"),
     "kRegistered" : MessageLookupByLibrary.simpleMessage("Registered"),
+    "kSave" : MessageLookupByLibrary.simpleMessage("Save"),
     "kTakePicture" : MessageLookupByLibrary.simpleMessage("Take picture"),
     "kUseGallery" : MessageLookupByLibrary.simpleMessage("Upload from gallery"),
     "kWrongInputNotification" : MessageLookupByLibrary.simpleMessage("The email or password don\'t match."),

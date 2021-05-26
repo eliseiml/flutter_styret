@@ -44,7 +44,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "kNo" : MessageLookupByLibrary.simpleMessage("Nei"),
     "kNoPropertiesFound" : MessageLookupByLibrary.simpleMessage("Nei egenskaper funnet"),
     "kPassword" : MessageLookupByLibrary.simpleMessage("Passord"),
+    "kPictureDialogTitle" : MessageLookupByLibrary.simpleMessage("Ta et bilde eller bruke galleriet?"),
     "kRegistered" : MessageLookupByLibrary.simpleMessage("Registrert"),
+    "kSave" : MessageLookupByLibrary.simpleMessage("Lagre"),
+    "kTakePicture" : MessageLookupByLibrary.simpleMessage("Ta bilde"),
+    "kUseGallery" : MessageLookupByLibrary.simpleMessage("Laste opp fra galleri"),
     "kWrongInputNotification" : MessageLookupByLibrary.simpleMessage("E-post eller passord ikke stemmer overens."),
     "kYes" : MessageLookupByLibrary.simpleMessage("Ja")
   };

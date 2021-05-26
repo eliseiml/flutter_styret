@@ -26,6 +26,7 @@ class SubTask {
       this.eventId}) {
     if (type == 'multiple_choice') {
       List tmp = unmappedOptions[0]['choices'];
+      //options.add(''); //First empty value
       tmp.forEach((element) {
         options.add(element.toString());
       });
