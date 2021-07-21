@@ -28,5 +28,6 @@
     "kPictureDialogTitle" : "Ta et bilde eller bruke galleriet?",
     "kTakePicture" : "Ta bilde",
     "kUseGallery" : "Laste opp fra galleri",
-    "kSave" : "Lagre"
+    "kSave" : "Lagre",
+    "kFloorPlans" : "Plantegninger"
 }

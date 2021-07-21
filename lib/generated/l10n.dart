@@ -334,6 +334,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Floor plans`
+  String get kFloorPlans {
+    return Intl.message(
+      'Floor plans',
+      name: 'kFloorPlans',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

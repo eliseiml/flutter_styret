@@ -1,4 +1,5 @@
 import 'package:flutter_styret_app/domain/discrepancy.dart';
+import 'package:flutter_styret_app/domain/map_object.dart';
 
 import 'event.dart';
 
@@ -9,6 +10,7 @@ class Property {
   int countEvents;
   List<Event> events = [];
   List<Discrepancy> discrepancies = [];
+  List<MapObject> mapObjects = [];
 
   Property(this.id, this.name, this.address, this.countEvents);
 

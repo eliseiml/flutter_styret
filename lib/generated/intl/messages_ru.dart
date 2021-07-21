@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "kDontKnow" : MessageLookupByLibrary.simpleMessage("Не знаю"),
     "kEmail" : MessageLookupByLibrary.simpleMessage("Email"),
     "kEvents" : MessageLookupByLibrary.simpleMessage("События"),
+    "kFloorPlans" : MessageLookupByLibrary.simpleMessage("Планы этажей"),
     "kInalidPassword" : MessageLookupByLibrary.simpleMessage("Неверный пароль"),
     "kInvalidEmail" : MessageLookupByLibrary.simpleMessage("Неверный Email"),
     "kLangEnglish" : MessageLookupByLibrary.simpleMessage("English"),

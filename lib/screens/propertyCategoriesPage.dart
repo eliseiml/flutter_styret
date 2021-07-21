@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styret_app/domain/property.dart';
+import 'package:flutter_styret_app/features/property_maps/presentation/pages/floor_plans_page.dart';
 import 'package:flutter_styret_app/generated/l10n.dart';
 import 'package:flutter_styret_app/models/api_worker.dart';
 import 'package:flutter_styret_app/screens/eventsPage.dart';
@@ -57,7 +58,12 @@ class PropertyCategoriesPageState extends State<PropertyCategoriesPage> {
                     return DiscrepanciesPage(property);
                   }));
                 }, AwesomeIcons.alertTriangleIcon,
-                    property.discrepancies.length)
+                    property.discrepancies.length),
+                categoryTile(context, S.of(context).kFloorPlans, () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return FloorPlansPage(property: property);
+                  }));
+                }, AwesomeIcons.propertyIcon, property.mapObjects.length)
               ],
             );
           } else {
@@ -87,7 +93,11 @@ class PropertyCategoriesPageState extends State<PropertyCategoriesPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             //icon
-            AwesomeIcon(icon: icon, color: kAccentColor),
+            AwesomeIcon(
+              icon: icon,
+              color: kAccentColor,
+              fontFamily: 'fa-solid',
+            ),
             //Spacing
             Container(width: 15),
             //Title

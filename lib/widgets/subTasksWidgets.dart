@@ -451,13 +451,13 @@ class FilePickerBlock extends StatefulWidget {
 
 class _FilePickerBlockState extends State<FilePickerBlock> {
   SubTask subTask;
-  String _netFileUrl;
+  //String _netFileUrl;
   PlatformFile _file;
 
   _FilePickerBlockState(this.subTask) : assert(subTask != null) {
-    if (subTask.answer != '') {
+/*     if (subTask.answer != '') {
       _netFileUrl = subTask.answer;
-    }
+    } */
   }
 
   Future<void> _pickFile() async {

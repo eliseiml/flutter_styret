@@ -28,5 +28,6 @@
     "kPictureDialogTitle" : "Take picture or use gallery?",
     "kTakePicture" : "Take picture",
     "kUseGallery" : "Upload from gallery",
-    "kSave" : "Save"
+    "kSave" : "Save",
+    "kFloorPlans" : "Floor plans"
 }

@@ -28,5 +28,6 @@
     "kPictureDialogTitle" : "Сделать фото или загрузить из галереи?",
     "kTakePicture" : "Сделать фото",
     "kUseGallery" : "Загрузить из галереи",
-    "kSave" : "Сохранить"
+    "kSave" : "Сохранить",
+    "kFloorPlans" : "Планы этажей"
 }

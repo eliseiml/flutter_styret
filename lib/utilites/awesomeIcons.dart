@@ -29,4 +29,5 @@ class AwesomeIcons {
   static const int pictureIcon = 0xf030; //fa-solid
   static const int fileIcon = 0xf56c; //fa-solid
   static const int uploadIcon = 0xf093;
+  static const int downloadIcon = 0xf0c7;
 }

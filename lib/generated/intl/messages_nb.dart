@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "kDontKnow" : MessageLookupByLibrary.simpleMessage("Vet ikke"),
     "kEmail" : MessageLookupByLibrary.simpleMessage("Epost"),
     "kEvents" : MessageLookupByLibrary.simpleMessage("Oppgaver"),
+    "kFloorPlans" : MessageLookupByLibrary.simpleMessage("Plantegninger"),
     "kInalidPassword" : MessageLookupByLibrary.simpleMessage("Passordet er ugyldig"),
     "kInvalidEmail" : MessageLookupByLibrary.simpleMessage("Epost er ugyldig"),
     "kLangEnglish" : MessageLookupByLibrary.simpleMessage("English"),
