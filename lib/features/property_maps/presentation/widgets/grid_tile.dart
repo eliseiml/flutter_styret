@@ -18,7 +18,10 @@ Widget gridTile({
           color: state ? kAccentColor : kBackgroundColor,
           border: Border.all(color: kInactiveTextColor, width: 2),
           borderRadius: BorderRadius.circular(10)),
-      child: Text(text),
+      child: Text(
+        text,
+        style: TextStyle(color: state ? kButtonTextColor : Colors.black),
+      ),
     ),
   );
 }

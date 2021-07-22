@@ -22,7 +22,8 @@ Widget scalableImageView(String imageUrl) {
     },
     child: Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+      //margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+      padding: EdgeInsets.all(10),
       child: imageUrl != ''
           ? InteractiveViewer(
               transformationController: transformationController,
