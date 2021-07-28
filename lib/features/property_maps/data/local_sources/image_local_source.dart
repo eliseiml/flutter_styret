@@ -10,15 +10,19 @@ abstract class ImageLocalSource {
 class ImageLocalSourceImpl implements ImageLocalSource {
   @override
   Future<bool> saveImage(MapImage image) async {
+    String timeStamp = DateTime.now().hour.toString() +
+        '-' +
+        DateTime.now().minute.toString() +
+        '-' +
+        DateTime.now().second.toString();
     try {
       if (await Permission.storage.request().isGranted) {
         var response = await http.readBytes(Uri.parse(image.image));
-        var result = await ImageGallerySaver.saveImage(response,
-            name: image.id +
-                '_' +
-                image.mapLayerId +
-                '_' +
-                DateTime.now().toString());
+        var result = await ImageGallerySaver.saveImage(
+          response,
+          name: '${image.id}-$timeStamp',
+        );
+        print(result['isSuccess']);
         return result['isSuccess'];
       } else {
         print('Permission is NOT GRANTED');
