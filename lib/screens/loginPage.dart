@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_appcenter_bundle/flutter_appcenter_bundle.dart';
 import 'package:flutter_styret_app/domain/user.dart';
 import 'package:flutter_styret_app/generated/l10n.dart';
 import 'package:flutter_styret_app/models/authModel.dart';
@@ -8,6 +11,7 @@ import 'package:flutter_styret_app/utilites/textStyles.dart';
 import 'package:flutter_styret_app/widgets/button.dart';
 import 'package:flutter_styret_app/widgets/textInputField.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:flutter/services.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -28,6 +32,12 @@ class LoginPageState extends State<LoginPage> {
         return PropertiesPage();
       }));
     }
+    var result = await AppCenter.trackEventAsync('Login button pressed', {
+      'Platform iOS': Platform.isIOS.toString(),
+      'Platform Android': Platform.isAndroid.toString(),
+      'TimeStamp': DateTime.now().toString()
+    });
+    print(result);
   }
 
   @override
@@ -147,5 +157,4 @@ class LoginPageState extends State<LoginPage> {
       ),
     );
   }
-  
 }

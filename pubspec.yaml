@@ -39,6 +39,7 @@ dependencies:
   flutter_bloc: ^7.0.1
   image_gallery_saver: ^1.6.9
   permission_handler: ^8.1.2
+  flutter_appcenter_bundle: ^3.3.2
 
 dev_dependencies:
   flutter_test:
