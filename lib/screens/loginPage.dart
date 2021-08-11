@@ -21,7 +21,7 @@ class LoginPage extends StatefulWidget {
 class LoginPageState extends State<LoginPage> {
   double paddingTop;
 
-  void _onLogin() async {
+  void onLogin() async {
     await authModel.onLoginPressed();
     if (user != null) {
       while (Navigator.canPop(context)) {
@@ -117,7 +117,7 @@ class LoginPageState extends State<LoginPage> {
                         title: S.of(context).kLogin,
                         context: context,
                         onTap: () {
-                          _onLogin();
+                          onLogin();
                         })
                   ],
                 ),
